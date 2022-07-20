@@ -7,10 +7,6 @@
 
 import Foundation
 
-//struct TopLevelObject: Decodable {
-//    let persons: [Person]
-//}
-
 struct Person: Decodable {
     
     let img: String

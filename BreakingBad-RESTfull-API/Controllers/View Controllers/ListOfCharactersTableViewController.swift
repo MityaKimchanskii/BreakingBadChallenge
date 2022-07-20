@@ -29,23 +29,6 @@ class ListOfCharactersTableViewController: UITableViewController {
         seasonAppearanceAlertController()
     }
     
-    // MARK: - Helper Methods
-    func fetchAllCharacters() {
-        PersonController.fetchCharacters { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let persons):
-                    self?.persons = persons
-                    self?.listOfPersonsTableView.reloadData()
-                case .failure(let error):
-                    print(error)
-                    print(error.localizedDescription)
-                    
-                }
-            }
-        }
-    }
-    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return persons.count
@@ -90,6 +73,22 @@ class ListOfCharactersTableViewController: UITableViewController {
     }
     
     // MARK: - Helpers Methods
+    func fetchAllCharacters() {
+        PersonController.fetchCharacters { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let persons):
+                    self?.persons = persons
+                    self?.listOfPersonsTableView.reloadData()
+                case .failure(let error):
+                    print(error)
+                    print(error.localizedDescription)
+                    
+                }
+            }
+        }
+    }
+    
     func seasonAppearanceAlertController() {
         let alertController = UIAlertController(title: "Filter Character", message: "Filter Characters By Season Appearance", preferredStyle: .actionSheet)
         let season1Action = UIAlertAction(title: "Season 1", style: .default) { (_) in
