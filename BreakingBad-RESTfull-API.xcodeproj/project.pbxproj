@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		3BC32135288760B0001C018B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC32134288760B0001C018B /* AppDelegate.swift */; };
 		3BC32137288760B0001C018B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC32136288760B0001C018B /* SceneDelegate.swift */; };
-		3BC32139288760B0001C018B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC32138288760B0001C018B /* ViewController.swift */; };
 		3BC3213C288760B0001C018B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3213A288760B0001C018B /* Main.storyboard */; };
 		3BC3213E288760B1001C018B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3213D288760B1001C018B /* Assets.xcassets */; };
 		3BC32141288760B1001C018B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC3213F288760B1001C018B /* LaunchScreen.storyboard */; };
+		3BC3214D28876A49001C018B /* ListOfCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3214C28876A49001C018B /* ListOfCharactersTableViewController.swift */; };
+		3BC3214F28876A6B001C018B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3214E28876A6B001C018B /* DetailsViewController.swift */; };
+		3BC3215128876AA5001C018B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3215028876AA5001C018B /* Person.swift */; };
+		3BC3215628877051001C018B /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3215528877051001C018B /* CharacterTableViewCell.swift */; };
+		3BC3215928877126001C018B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3215828877126001C018B /* NetworkError.swift */; };
+		3BC3215B28877577001C018B /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC3215A28877577001C018B /* PersonController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BC32131288760B0001C018B /* BreakingBad-RESTfull-API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BreakingBad-RESTfull-API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BC32134288760B0001C018B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BC32136288760B0001C018B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3BC32138288760B0001C018B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3BC3213B288760B0001C018B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BC3213D288760B1001C018B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BC32140288760B1001C018B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BC32142288760B1001C018B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3BC3214C28876A49001C018B /* ListOfCharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCharactersTableViewController.swift; sourceTree = "<group>"; };
+		3BC3214E28876A6B001C018B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3BC3215028876AA5001C018B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3BC3215528877051001C018B /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
+		3BC3215828877126001C018B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3BC3215A28877577001C018B /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +50,7 @@
 		3BC32128288760B0001C018B = {
 			isa = PBXGroup;
 			children = (
+				3BC3215728877102001C018B /* Helpers+Extensions */,
 				3BC32133288760B0001C018B /* BreakingBad-RESTfull-API */,
 				3BC32132288760B0001C018B /* Products */,
 			);
@@ -56,15 +67,83 @@
 		3BC32133288760B0001C018B /* BreakingBad-RESTfull-API */ = {
 			isa = PBXGroup;
 			children = (
+				3BC3214A288760F3001C018B /* Models */,
+				3BC32149288760E9001C018B /* Vews */,
+				3BC3214B288760FE001C018B /* Controllers */,
+				3BC321542887700D001C018B /* Custom Views */,
+				3BC32148288760CF001C018B /* Resources */,
+			);
+			path = "BreakingBad-RESTfull-API";
+			sourceTree = "<group>";
+		};
+		3BC32148288760CF001C018B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				3BC32134288760B0001C018B /* AppDelegate.swift */,
 				3BC32136288760B0001C018B /* SceneDelegate.swift */,
-				3BC32138288760B0001C018B /* ViewController.swift */,
-				3BC3213A288760B0001C018B /* Main.storyboard */,
 				3BC3213D288760B1001C018B /* Assets.xcassets */,
 				3BC3213F288760B1001C018B /* LaunchScreen.storyboard */,
 				3BC32142288760B1001C018B /* Info.plist */,
 			);
-			path = "BreakingBad-RESTfull-API";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		3BC32149288760E9001C018B /* Vews */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3213A288760B0001C018B /* Main.storyboard */,
+			);
+			path = Vews;
+			sourceTree = "<group>";
+		};
+		3BC3214A288760F3001C018B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3215028876AA5001C018B /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BC3214B288760FE001C018B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3215328876CE7001C018B /* Model Controllers */,
+				3BC3215228876CD3001C018B /* View Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3BC3215228876CD3001C018B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3214C28876A49001C018B /* ListOfCharactersTableViewController.swift */,
+				3BC3214E28876A6B001C018B /* DetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3BC3215328876CE7001C018B /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3215A28877577001C018B /* PersonController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		3BC321542887700D001C018B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3215528877051001C018B /* CharacterTableViewCell.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		3BC3215728877102001C018B /* Helpers+Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3BC3215828877126001C018B /* NetworkError.swift */,
+			);
+			path = "Helpers+Extensions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BC32139288760B0001C018B /* ViewController.swift in Sources */,
 				3BC32135288760B0001C018B /* AppDelegate.swift in Sources */,
+				3BC3215928877126001C018B /* NetworkError.swift in Sources */,
 				3BC32137288760B0001C018B /* SceneDelegate.swift in Sources */,
+				3BC3215128876AA5001C018B /* Person.swift in Sources */,
+				3BC3215B28877577001C018B /* PersonController.swift in Sources */,
+				3BC3214D28876A49001C018B /* ListOfCharactersTableViewController.swift in Sources */,
+				3BC3214F28876A6B001C018B /* DetailsViewController.swift in Sources */,
+				3BC3215628877051001C018B /* CharacterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,12 +373,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3VP62JDQQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BreakingBad-RESTfull-API/Info.plist";
+				INFOPLIST_FILE = "BreakingBad-RESTfull-API/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,12 +402,13 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = G3VP62JDQQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "BreakingBad-RESTfull-API/Info.plist";
+				INFOPLIST_FILE = "BreakingBad-RESTfull-API/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

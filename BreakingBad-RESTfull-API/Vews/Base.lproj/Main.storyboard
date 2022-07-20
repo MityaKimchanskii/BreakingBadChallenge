@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kzi-br-Dgz">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Breaking Bad-->
+        <scene sceneID="DtC-Zn-ysz">
+            <objects>
+                <tableViewController id="E1F-Kk-NPl" customClass="ListOfCharactersTableViewController" customModule="BreakingBad_RESTfull_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6kA-KZ-chg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="G93-mL-Jl8">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" spellCheckingType="no" returnKeyType="go" smartDashesType="yes" smartInsertDeleteType="yes" smartQuotesType="no" textContentType="name"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="characterCell" rowHeight="220" id="IUX-pz-oeQ" customClass="CharacterTableViewCell" customModule="BreakingBad_RESTfull_API" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="220"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IUX-pz-oeQ" id="h4i-Ew-o5i">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="S4M-bw-Xex">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="220"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LK4-AF-kiP">
+                                                    <rect key="frame" x="0.0" y="11" width="148" height="198"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="198" id="7r4-7a-ygs"/>
+                                                        <constraint firstAttribute="width" secondItem="LK4-AF-kiP" secondAttribute="height" multiplier="74:99" id="EgT-xb-SVU"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="3ML-EF-eyH">
+                                                    <rect key="frame" x="156" y="92.5" width="218" height="35"/>
+                                                    <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="S4M-bw-Xex" firstAttribute="top" secondItem="h4i-Ew-o5i" secondAttribute="top" id="BZG-re-EqE"/>
+                                        <constraint firstAttribute="bottom" secondItem="S4M-bw-Xex" secondAttribute="bottom" id="Dqg-0A-Nzy"/>
+                                        <constraint firstItem="S4M-bw-Xex" firstAttribute="leading" secondItem="h4i-Ew-o5i" secondAttribute="leading" constant="20" id="Ot5-Uj-fLl"/>
+                                        <constraint firstAttribute="trailing" secondItem="S4M-bw-Xex" secondAttribute="trailing" constant="20" id="efE-Tu-AEl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="characterImageView" destination="LK4-AF-kiP" id="hDU-oY-LqA"/>
+                                    <outlet property="nameLabel" destination="3ML-EF-eyH" id="EQe-o0-muE"/>
+                                    <segue destination="3nq-aq-65T" kind="show" identifier="detailsSegue" id="403-2f-hNt"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="E1F-Kk-NPl" id="UTg-aM-vy9"/>
+                            <outlet property="delegate" destination="E1F-Kk-NPl" id="aGF-az-7QX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Breaking Bad" id="nWS-C6-eGy">
+                        <barButtonItem key="rightBarButtonItem" image="line.3.horizontal.decrease" catalog="system" id="2Iu-G7-11m">
+                            <connections>
+                                <action selector="filterBySeasonAppearance:" destination="E1F-Kk-NPl" id="imt-gS-Le4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="listOfPersonsTableView" destination="6kA-KZ-chg" id="kQk-Ua-vtl"/>
+                        <outlet property="searchBar" destination="G93-mL-Jl8" id="OBS-39-hdj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dbu-TW-1PG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1542.0289855072465" y="196.875"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="7I7-cd-dYI">
+            <objects>
+                <viewController id="3nq-aq-65T" customClass="DetailsViewController" customModule="BreakingBad_RESTfull_API" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ziw-gh-aoO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGc-Vf-hXD">
+                                <rect key="frame" x="20" y="478" width="60" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Status:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzw-lf-wxx">
+                                <rect key="frame" x="20" y="572" width="65" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P9-6P-syv">
+                                <rect key="frame" x="20" y="605.5" width="98" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Occupation:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzl-tQ-hSP">
+                                <rect key="frame" x="20" y="512" width="108.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="kke-y2-52q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Appearance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4P-vI-JVp">
+                                <rect key="frame" x="20" y="639" width="113.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="(Name)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="utU-KN-GmP">
+                                <rect key="frame" x="90" y="478" width="304" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Status)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hw9-WJ-OwF">
+                                <rect key="frame" x="95" y="572" width="299" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Nickname)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tvT-iH-8xG">
+                                <rect key="frame" x="128" y="605.5" width="266" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="(Occupation)" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-4d-6s0">
+                                <rect key="frame" x="138.5" y="512" width="255.5" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nzt-qg-Rsl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.on.rectangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LIn-t9-fDo">
+                                <rect key="frame" x="77" y="108.5" width="260" height="359"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="kHz-MX-oO4"/>
+                                    <constraint firstAttribute="width" constant="260" id="scz-24-ISG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Appearance)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="szI-zd-qmI">
+                                <rect key="frame" x="143.5" y="639" width="250.5" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Zmi-th-Lp3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zmi-th-Lp3" firstAttribute="trailing" secondItem="tvT-iH-8xG" secondAttribute="trailing" constant="20" id="6J5-MJ-qIJ"/>
+                            <constraint firstItem="mzl-tQ-hSP" firstAttribute="top" secondItem="aGc-Vf-hXD" secondAttribute="bottom" constant="10" id="6Kj-dG-AT3"/>
+                            <constraint firstItem="tvT-iH-8xG" firstAttribute="leading" secondItem="0P9-6P-syv" secondAttribute="trailing" constant="10" id="E8n-tr-jhu"/>
+                            <constraint firstItem="utU-KN-GmP" firstAttribute="leading" secondItem="aGc-Vf-hXD" secondAttribute="trailing" constant="10" id="Gyl-9i-gcc"/>
+                            <constraint firstItem="Zmi-th-Lp3" firstAttribute="trailing" secondItem="Eb7-4d-6s0" secondAttribute="trailing" constant="20" id="HOU-ml-C3M"/>
+                            <constraint firstItem="0P9-6P-syv" firstAttribute="top" secondItem="Pzw-lf-wxx" secondAttribute="bottom" constant="10" id="IaI-vp-mRO"/>
+                            <constraint firstItem="V4P-vI-JVp" firstAttribute="leading" secondItem="Zmi-th-Lp3" secondAttribute="leading" constant="20" id="N2K-bx-zBx"/>
+                            <constraint firstItem="hw9-WJ-OwF" firstAttribute="top" secondItem="mzl-tQ-hSP" secondAttribute="bottom" constant="10" id="NJz-Rz-Ddq"/>
+                            <constraint firstItem="tvT-iH-8xG" firstAttribute="top" secondItem="hw9-WJ-OwF" secondAttribute="bottom" constant="10" id="NpN-yR-zm9"/>
+                            <constraint firstItem="utU-KN-GmP" firstAttribute="top" secondItem="LIn-t9-fDo" secondAttribute="bottom" constant="10" id="Nu0-xT-tZz"/>
+                            <constraint firstItem="aGc-Vf-hXD" firstAttribute="leading" secondItem="Zmi-th-Lp3" secondAttribute="leading" constant="20" id="Psv-cg-hk1"/>
+                            <constraint firstItem="Zmi-th-Lp3" firstAttribute="trailing" secondItem="szI-zd-qmI" secondAttribute="trailing" constant="20" id="SXz-NP-IBT"/>
+                            <constraint firstItem="Pzw-lf-wxx" firstAttribute="top" secondItem="mzl-tQ-hSP" secondAttribute="bottom" constant="10" id="Y7o-rq-axJ"/>
+                            <constraint firstItem="Eb7-4d-6s0" firstAttribute="top" secondItem="utU-KN-GmP" secondAttribute="bottom" constant="10" id="YxC-c8-riw"/>
+                            <constraint firstItem="LIn-t9-fDo" firstAttribute="top" secondItem="Zmi-th-Lp3" secondAttribute="top" constant="20" id="dPd-Xu-cl8"/>
+                            <constraint firstItem="mzl-tQ-hSP" firstAttribute="leading" secondItem="Zmi-th-Lp3" secondAttribute="leading" constant="20" id="dvH-2f-fZV"/>
+                            <constraint firstItem="V4P-vI-JVp" firstAttribute="top" secondItem="0P9-6P-syv" secondAttribute="bottom" constant="10" id="ems-CY-UxP"/>
+                            <constraint firstItem="hw9-WJ-OwF" firstAttribute="leading" secondItem="Pzw-lf-wxx" secondAttribute="trailing" constant="10" id="idF-HB-tM4"/>
+                            <constraint firstItem="szI-zd-qmI" firstAttribute="leading" secondItem="V4P-vI-JVp" secondAttribute="trailing" constant="10" id="iyl-UE-wFB"/>
+                            <constraint firstItem="aGc-Vf-hXD" firstAttribute="top" secondItem="LIn-t9-fDo" secondAttribute="bottom" constant="10" id="kM5-wN-vWH"/>
+                            <constraint firstItem="Eb7-4d-6s0" firstAttribute="leading" secondItem="mzl-tQ-hSP" secondAttribute="trailing" constant="10" id="nC1-bH-MDF"/>
+                            <constraint firstItem="LIn-t9-fDo" firstAttribute="centerX" secondItem="Ziw-gh-aoO" secondAttribute="centerX" id="qpT-gU-qvq"/>
+                            <constraint firstItem="Zmi-th-Lp3" firstAttribute="trailing" secondItem="hw9-WJ-OwF" secondAttribute="trailing" constant="20" id="tTK-nF-QV9"/>
+                            <constraint firstItem="Zmi-th-Lp3" firstAttribute="trailing" secondItem="utU-KN-GmP" secondAttribute="trailing" constant="20" id="teu-6v-sgo"/>
+                            <constraint firstItem="0P9-6P-syv" firstAttribute="leading" secondItem="Zmi-th-Lp3" secondAttribute="leading" constant="20" id="y8B-lw-qQo"/>
+                            <constraint firstItem="szI-zd-qmI" firstAttribute="top" secondItem="tvT-iH-8xG" secondAttribute="bottom" constant="10" id="z6p-OB-uI0"/>
+                            <constraint firstItem="Pzw-lf-wxx" firstAttribute="leading" secondItem="Zmi-th-Lp3" secondAttribute="leading" constant="20" id="zgD-vH-UuM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Details" id="Uhv-fH-oeN"/>
+                    <connections>
+                        <outlet property="appearanceLabel" destination="szI-zd-qmI" id="8f9-r7-sS3"/>
+                        <outlet property="characterImageView" destination="LIn-t9-fDo" id="xce-lO-AkK"/>
+                        <outlet property="nameLabel" destination="utU-KN-GmP" id="ytF-iL-cWY"/>
+                        <outlet property="nicknameLabel" destination="tvT-iH-8xG" id="afy-ak-AkR"/>
+                        <outlet property="occupationLabel" destination="Eb7-4d-6s0" id="Goo-AE-ghs"/>
+                        <outlet property="statusLabel" destination="hw9-WJ-OwF" id="PDo-ya-1Fs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nS-p9-nfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260.8695652173915" y="196.875"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="j9W-nJ-3gz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kzi-br-Dgz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FbP-2h-Zsg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="25"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="25"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="E1F-Kk-NPl" kind="relationship" relationship="rootViewController" id="I7P-Zc-oJp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-WO-Ykx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="196.875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="97"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
